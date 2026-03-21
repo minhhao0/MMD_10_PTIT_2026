@@ -1,17 +1,32 @@
 district,city,lat,lon
-Ba Dinh,Ha Noi,21.0379,105.8359
-Cau Giay,Ha Noi,21.0261,105.7953
-Dong Da,Ha Noi,21.0151,105.8271
-Hai Ba Trung,Ha Noi,21.0117,105.8497
-Hoan Kiem,Ha Noi,21.0250,105.8574
-Thanh Xuan,Ha Noi,20.9994,105.8125
-Hoang Mai,Ha Noi,20.9693,105.8548
-Long Bien,Ha Noi,21.0535,105.8925
-Ha Dong,Ha Noi,20.9579,105.7473
-Tay Ho,Ha Noi,21.0636,105.8253
-Nam Tu Liem,Ha Noi,21.0128,105.7685
-Bac Tu Liem,Ha Noi,21.0678,105.7634
-Thanh Tri,Ha Noi,20.9363,105.8384
-Ba Vi,Ha Noi,21.1396,105.3698
-Dan Phuong,Ha Noi,21.1137,105.6775
-Gia Lam,Ha Noi,21.0366,105.9653
+Ba Đình,Hà Nội,21.0379,105.8359
+Cầu Giấy,Hà Nội,21.0261,105.7953
+Đống Đa,Hà Nội,21.0151,105.8271
+Hai Bà Trưng,,21.0117,105.8497
+Hoàn Kiếm,Hà Nội,21.0250,105.8574
+Thanh Xuân,Hà Nội,20.9994,105.8125
+Hoàng Mai,Hà Nội,20.9693,105.8548
+Long Biên,Hà Nội,21.0535,105.8925
+Hà Đông,Hà Nội,20.9579,105.7473
+Tây Hồ,Hà Nội,21.0636,105.8253
+Nam Từ Liêm,Hà Nội,21.0128,105.7685
+Bắc Từ Liêm,Hà Nội,21.0678,105.7634
+Thanh Trì,Hà Nội,20.9363,105.8384
+Ba Vì,Hà Nội,21.1396,105.3698
+Đan Phượng,Hà Nội,21.1137,105.6775
+Gia Lâm,Hà Nội,21.0366,105.9653
+Đông Anh,Hà Nội,21.1619,105.8477
+Thường Tín,Hà Nội,20.8720,105.8638
+Thanh Oai,Hà Nội,20.8677, 105.7735
+Chương Mỹ,Hà Nội,20.8823, 105.67288
+Hoài Đức,Hà Nội,21.0230, 105.6982
+Mỹ Đức,Hà Nội,20.7153, 105.6956
+Phúc Thọ,Hà Nội,21.1240, 105.5845
+Thạch Thất,Hà Nội,21.0163, 105.5244
+Quốc Oai,Hà Nội,20.9751, 105.6067
+Phú Xuyên,Hà Nội,20.7383, 105.9009
+Ứng Hòa,Hà Nội,20.7041, 105.8152
+Mê Linh,Hà Nội,21.1902, 105.7066
+Sóc Sơn,Hà Nội,21.2537, 105.8504
+Sơn Tây,Hà Nội,21.1164, 105.4856
+
