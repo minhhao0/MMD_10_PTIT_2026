@@ -1,0 +1,246 @@
+district,city,lat,lon
+District 1,Ho Chi Minh City,10.7761,106.6958
+District 3,Ho Chi Minh City,10.7844,106.6817
+District 4,Ho Chi Minh City,10.7578,106.7011
+District 5,Ho Chi Minh City,10.7541,106.6622
+District 6,Ho Chi Minh City,10.7481,106.6353
+District 7,Ho Chi Minh City,10.7324,106.7321
+District 8,Ho Chi Minh City,10.7236,106.6341
+District 10,Ho Chi Minh City,10.7747,106.6669
+District 11,Ho Chi Minh City,10.7628,106.6506
+District 12,Ho Chi Minh City,10.8672,106.6414
+Binh Tan,Ho Chi Minh City,10.7631,106.6022
+Binh Thanh,Ho Chi Minh City,10.8106,106.7091
+Go Vap,Ho Chi Minh City,10.8383,106.6733
+Phu Nhuan,Ho Chi Minh City,10.7992,106.6803
+Tan Binh,Ho Chi Minh City,10.8014,106.6525
+Tan Phu,Ho Chi Minh City,10.7925,106.6183
+Thu Duc City,Ho Chi Minh City,10.8492,106.7731
+Binh Chanh,Ho Chi Minh City,10.6841,106.5914
+Can Gio,Ho Chi Minh City,10.5083,106.8633
+Cu Chi,Ho Chi Minh City,11.0067,106.5133
+Hoc Mon,Ho Chi Minh City,10.8856,106.5858
+Nha Be,Ho Chi Minh City,10.6481,106.7344
+Bien Hoa,Dong Nai,10.9453,106.8189
+Long Khanh,Dong Nai,10.9333,107.2333
+Cam My,Dong Nai,10.7500,107.2833
+Dinh Quan,Dong Nai,11.2000,107.3500
+Long Thanh,Dong Nai,10.7833,106.9500
+Nhon Trach,Dong Nai,10.7333,106.9167
+Tan Phu,Dong Nai,11.3833,107.4167
+Thong Nhat,Dong Nai,10.9500,107.0333
+Trang Bom,Dong Nai,10.9500,106.9833
+Vinh Cuu,Dong Nai,11.1333,106.9833
+Xuan Loc,Dong Nai,10.9167,107.3833
+Thu Dau Mot,Binh Duong,10.9800,106.6500
+Di An,Binh Duong,10.9167,106.7833
+Thuan An,Binh Duong,10.9167,106.7000
+Ben Cat,Binh Duong,11.1667,106.6000
+Tan Uyen,Binh Duong,11.0500,106.8000
+Bac Tan Uyen,Binh Duong,11.1500,106.8667
+Bau Bang,Binh Duong,11.2667,106.5833
+Dau Tieng,Binh Duong,11.2833,106.3667
+Phu Giao,Binh Duong,11.3167,106.7500
+Vung Tau,Ba Ria - Vung Tau,10.3460,107.0843
+Ba Ria,Ba Ria - Vung Tau,10.4964,107.1731
+Phu My,Ba Ria - Vung Tau,10.5833,107.0667
+Chau Duc,Ba Ria - Vung Tau,10.6500,107.2167
+Con Dao,Ba Ria - Vung Tau,8.6833,106.6000
+Dat Do,Ba Ria - Vung Tau,10.5000,107.2667
+Long Dien,Ba Ria - Vung Tau,10.4833,107.2000
+Xuyen Moc,Ba Ria - Vung Tau,10.6333,107.4167
+Dong Xoai,Binh Phuoc,11.5333,106.8833
+Binh Long,Binh Phuoc,11.6833,106.6000
+Phuoc Long,Binh Phuoc,11.8333,106.9833
+Chon Thanh,Binh Phuoc,11.4500,106.6167
+Dong Phu,Binh Phuoc,11.5167,106.9167
+Hon Quan,Binh Phuoc,11.6167,106.5833
+Loc Ninh,Binh Phuoc,11.8500,106.5833
+Bu Dang,Binh Phuoc,11.8333,107.2167
+Bu Dop,Binh Phuoc,11.9667,106.8500
+Bu Gia Map,Binh Phuoc,12.0167,107.0167
+Phu Rieng,Binh Phuoc,11.7000,106.8500
+Tay Ninh City,Tay Ninh,11.3167,106.1000
+Hoa Thanh,Tay Ninh,11.2667,106.1333
+Trang Bang,Tay Ninh,11.0333,106.3500
+Ben Cau,Tay Ninh,11.1000,106.1167
+Chau Thanh,Tay Ninh,11.3167,106.0167
+Duong Minh Chau,Tay Ninh,11.3667,106.2667
+Go Dau,Tay Ninh,11.1000,106.2667
+Tan Bien,Tay Ninh,11.6000,105.9833
+Tan Chau,Tay Ninh,11.6500,106.2667
+Da Lat,Lam Dong,11.9465,108.4419
+Bao Loc,Lam Dong,11.5461,107.8033
+Bao Lam,Lam Dong,11.5833,107.7500
+Cat Tien,Lam Dong,11.5333,107.3833
+Di Linh,Lam Dong,11.4167,108.0833
+Da Huoai,Lam Dong,11.3833,107.6167
+Da Teh,Lam Dong,11.5167,107.5167
+Dam Rong,Lam Dong,12.0833,108.1500
+Don Duong,Lam Dong,11.8500,108.5833
+Duc Trong,Lam Dong,11.7333,108.3667
+Lac Duong,Lam Dong,12.1333,108.4500
+Lam Ha,Lam Dong,11.8333,108.1833
+Gia Nghia,Dak Nong,12.0000,107.6833
+Cu Jut,Dak Nong,12.6000,107.8667
+Dak Glong,Dak Nong,11.9500,108.0333
+Dak Mil,Dak Nong,12.4167,107.5000
+Dak R'Lap,Dak Nong,11.9000,107.4167
+Dak Song,Dak Nong,12.2333,107.5500
+Krong No,Dak Nong,12.4000,107.9167
+Tuy Duc,Dak Nong,12.0167,107.3500
+Buon Ma Thuot,Dak Lak,12.6667,108.0500
+Buon Ho,Dak Lak,12.9167,108.2667
+Ea H'leo,Dak Lak,13.2167,108.2000
+Ea Kar,Dak Lak,12.8000,108.5667
+Ea Súp,Dak Lak,13.1500,107.8333
+Krong Ana,Dak Lak,12.5167,108.1667
+Krong Bong,Dak Lak,12.4833,108.4333
+Krong Buk,Dak Lak,12.9833,108.2167
+Krong Nang,Dak Lak,12.9833,108.4333
+Krong Pac,Dak Lak,12.6833,108.3167
+Lak,Dak Lak,12.3500,108.1667
+M'Drak,Dak Lak,12.7500,108.7500
+Pleiku,Gia Lai,13.9833,108.0000
+An Khe,Gia Lai,13.9500,108.6667
+Ayun Pa,Gia Lai,13.5000,108.4500
+Chu Pah,Gia Lai,14.1500,107.9833
+Chu Prong,Gia Lai,13.7500,107.8500
+Chu Sê,Gia Lai,13.6500,108.1167
+Dak Doa,Gia Lai,14.0167,108.1333
+Dak Po,Gia Lai,13.9667,108.5667
+Duc Co,Gia Lai,13.8167,107.6500
+Ia Grai,Gia Lai,14.0167,107.7500
+Ia Pa,Gia Lai,13.6000,108.4667
+Kbang,Gia Lai,14.3333,108.5833
+Kong Chro,Gia Lai,13.8333,108.6167
+Krong Pa,Gia Lai,13.1833,108.6500
+Kon Tum City,Kon Tum,14.3500,108.0000
+Dak Glei,Kon Tum,15.0667,107.7167
+Dak Ha,Kon Tum,14.5333,108.0167
+Dak To,Kon Tum,14.6500,107.8333
+Kon Plong,Kon Tum,14.6333,108.3167
+Kon Ray,Kon Tum,14.4833,108.2000
+Ngoc Hoi,Kon Tum,14.7000,107.6500
+Sa Thay,Kon Tum,14.4167,107.6667
+Tu Mo Rong,Kon Tum,14.9167,108.0167
+Tan An,Long An,10.5333,106.4000
+Kien Tuong,Long An,10.7833,105.9333
+Ben Luc,Long An,10.6333,106.4833
+Can Duoc,Long An,10.5000,106.6333
+Can Giuoc,Long An,10.5833,106.6833
+Chau Thanh,Long An,10.4333,106.4833
+Duc Hoa,Long An,10.8333,106.4667
+Duc Hue,Long An,10.9167,106.3833
+Vinh Hung,Long An,10.9333,105.8833
+My Tho,Tien Giang,10.3500,106.3500
+Go Cong,Tien Giang,10.3500,106.6667
+Cai Lay Town,Tien Giang,10.4167,106.1167
+Cai Be,Tien Giang,10.3667,106.0167
+Go Cong Dong,Tien Giang,10.3667,106.7500
+Go Cong Tay,Tien Giang,10.2833,106.6167
+Tan Phuoc,Tien Giang,10.5167,106.1833
+Ben Tre City,Ben Tre,10.2333,106.3833
+Ba Tri,Ben Tre,10.0500,106.6000
+Binh Dai,Ben Tre,10.1833,106.6833
+Chau Thanh,Ben Tre,10.2833,106.3167
+Cho Lach,Ben Tre,10.2167,106.1167
+Giong Trom,Ben Tre,10.1667,106.4833
+Mo Cay Bac,Ben Tre,10.1500,106.2833
+Mo Cay Nam,Ben Tre,10.0500,106.3333
+Thanh Phu,Ben Tre,9.9167,106.4833
+Cao Lanh,Dong Thap,10.4500,105.6333
+Sa Dec,Dong Thap,10.3000,105.7500
+Hong Ngu City,Dong Thap,10.8333,105.2833
+Hong Ngu District,Dong Thap,10.8500,105.3167
+Lai Vung,Dong Thap,10.2500,105.6500
+Lap Vo,Dong Thap,10.3167,105.6500
+Tam Nong,Dong Thap,10.6667,105.5167
+Thanh Binh,Dong Thap,10.5500,105.4667
+Thap Muoi,Dong Thap,10.5833,105.7833
+Vinh Long City,Vinh Long,10.2500,105.9667
+Binh Minh,Vinh Long,10.0333,105.8500
+Binh Tan,Vinh Long,10.1500,105.7833
+Long Ho,Vinh Long,10.2000,105.9833
+Mang Thit,Vinh Long,10.1833,106.1000
+Tam Binh,Vinh Long,10.1000,105.9667
+Tra On,Vinh Long,9.9667,105.9833
+Vung Liem,Vinh Long,10.1167,106.1833
+Ninh Kieu,Can Tho,10.0360,105.7844
+Cai Rang,Can Tho,9.9933,105.7500
+Binh Thuy,Can Tho,10.0833,105.7167
+O Mon,Can Tho,10.1167,105.6333
+Thot Not,Can Tho,10.2667,105.5167
+Co Do,Can Tho,10.1333,105.5000
+Phong Dien,Can Tho,9.9833,105.6667
+Thoi Lai,Can Tho,10.0833,105.5333
+Vinh Thanh,Can Tho,10.2500,105.3833
+Vi Thanh,Hau Giang,9.7833,105.4667
+Nga Bay,Hau Giang,9.8500,105.8167
+Long My Town,Hau Giang,9.7167,105.4667
+Long My District,Hau Giang,9.6833,105.5167
+Chau Thanh,Hau Giang,9.8833,105.7500
+Chau Thanh A,Hau Giang,9.9167,105.6667
+Phung Hiep,Hau Giang,9.7500,105.7167
+Vi Thuy,Hau Giang,9.8333,105.5833
+Tra Vinh City,Tra Vinh,9.9333,106.3333
+Duyen Hai Town,Tra Vinh,9.6667,106.5167
+Cang Long,Tra Vinh,10.0667,106.2167
+Chau Thanh,Tra Vinh,9.8833,106.3333
+Cau Ke,Tra Vinh,9.9500,106.0833
+Cau Ngang,Tra Vinh,9.7500,106.4833
+Duyen Hai District,Tra Vinh,9.6000,106.4500
+Tra Cu,Tra Vinh,9.6667,106.3000
+Tieu Can,Tra Vinh,9.8500,106.1833
+Soc Trang City,Soc Trang,9.6000,105.9667
+Nga Nam,Soc Trang,9.5000,105.5833
+Vinh Chau,Soc Trang,9.3167,105.9833
+Chau Thanh,Soc Trang,9.6667,105.8833
+Cu Lao Dung,Soc Trang,9.4667,106.2167
+Ke Sach,Soc Trang,9.8333,105.9833
+Long Phu,Soc Trang,9.5500,106.1167
+My Tu,Soc Trang,9.5833,105.8167
+My Xuyen,Soc Trang,9.5000,105.9167
+Thanh Tri,Soc Trang,9.4167,105.7167
+Tran De,Soc Trang,9.4500,106.1167
+Rach Gia,Kien Giang,10.0167,105.0833
+Ha Tien,Kien Giang,10.3833,104.4833
+Phu Quoc,Kien Giang,10.2167,103.9667
+An Bien,Kien Giang,9.7167,105.0167
+An Minh,Kien Giang,9.5167,104.9333
+Chau Thanh,Kien Giang,9.9167,105.1500
+Gia Rai,Kien Giang,9.5333,105.2833
+Giong Rieng,Kien Giang,9.8833,105.3167
+Hon Dat,Kien Giang,10.2167,104.8833
+Kien Hai,Kien Giang,9.7833,104.5333
+Kien Luong,Kien Giang,10.3000,104.6167
+Tan Hiep,Kien Giang,10.1500,105.3333
+U Minh Thuong,Kien Giang,9.5833,105.0833
+Vinh Thuan,Kien Giang,9.5167,105.2167
+Long Xuyen,An Giang,10.3667,105.4333
+Chau Doc,An Giang,10.7000,105.1167
+Tan Chau,An Giang,10.8167,105.2333
+An Phu,An Giang,10.9167,105.0833
+Chau Phu,An Giang,10.5833,105.1667
+Chau Thanh,An Giang,10.4500,105.2833
+Cho Moi,An Giang,10.4667,105.4500
+Phu Tan,An Giang,10.7167,105.3000
+Thoai Son,An Giang,10.2833,105.2167
+Tinh Bien,An Giang,10.6000,104.9833
+Tri Ton,An Giang,10.4167,105.0167
+Bac Lieu City,Bac Lieu,9.2833,105.7167
+Gia Rai,Bac Lieu,9.2333,105.4333
+Dong Hai,Bac Lieu,9.1167,105.4667
+Hoa Binh,Bac Lieu,9.2000,105.6167
+Hong Dan,Bac Lieu,9.5167,105.4167
+Phuoc Long,Bac Lieu,9.4167,105.5167
+Vinh Loi,Bac Lieu,9.3333,105.7167
+Ca Mau City,Ca Mau,9.1833,105.1500
+Cai Nuoc,Ca Mau,8.9667,105.0167
+Dam Doi,Ca Mau,8.9167,105.2167
+Nam Can,Ca Mau,8.7500,104.9167
+Ngoc Hien,Ca Mau,8.6167,104.8833
+Phu Tan,Ca Mau,8.9667,104.8500
+Thoi Binh,Ca Mau,9.4167,105.0167
+Tran Van Thoi,Ca Mau,9.1167,104.8667
+U Minh,Ca Mau,9.4167,104.9167
