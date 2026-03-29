@@ -66,14 +66,13 @@ async def fetch_one(
                     "timestamp": h["time"][idx],
                     "pm2_5":     h["pm2_5"][idx],
                     "pm10":      h["pm10"][idx],
-                    "us_aqi":    h["us_aqi"][idx],
                     "o3":        h["ozone"][idx],
                     "no2":       h["nitrogen_dioxide"][idx],
                     "so2":       h["sulphur_dioxide"][idx],
                     "co":        h["carbon_monoxide"][idx],
                 }
 
-                print(f"   {loc['province']:20s}  {loc['district']:20s}  AQI {record['us_aqi']}")
+                print(f"   {loc['province']:20s}  {loc['district']:20s}  PM2.5={record['pm2_5']}  PM10={record['pm10']}")
                 return record
 
             except httpx.HTTPStatusError as e:
@@ -115,13 +114,18 @@ def save_snapshot(records: list[dict]) -> Path:
 
 
 def print_top5(records: list[dict]):
-    top = sorted(records, key=lambda x: x["us_aqi"] or 0, reverse=True)[:5]
-    print("\nTop 5 AQI cao nhất:")
+    top = sorted(records, key=lambda x: x["pm2_5"] or 0, reverse=True)[:5]
+    print("\nTop 5 PM2.5 cao nhất:")
     for r in top:
-        print(f"   {r['province']:20s}  {r['district']:20s}  AQI {r['us_aqi']}")
+        print(f"   {r['province']:20s}  {r['district']:20s}  PM2.5={r['pm2_5']}  PM10={r['pm10']}")
 
 
 if __name__ == "__main__":
+    from collect.producer import send_records
     records = asyncio.run(fetch_all())
+    # Lưu snapshot JSON
     save_snapshot(records)
+    # Gửi vào Kafka
+    print("\nĐang gửi vào Kafka...")
+    send_records(records, verbose=False)
     print_top5(records)
