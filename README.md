@@ -20,7 +20,7 @@ fetcher.py ─── produce ──────→  topic: aqi-raw
                    (lưu lịch sử)          (serving layer)
                    /aqi/raw/                    │
                                                ↓
-SQL Server ◄──────────────────────────── Dashboard
+                                             Dashboard
 ```
 
 ## Cấu trúc thư mục
@@ -50,39 +50,39 @@ aqi-vietnam/
 Mở `config/config.py`, điền đúng IP:
 
 ```python
-KAFKA_BOOTSTRAP_SERVERS = "192.168.1.101:9092"
-HDFS_NAMENODE           = "hdfs://192.168.1.102:9000"
-SQLSERVER_HOST          = "192.168.1.100"
-SPARK_MASTER            = "spark://192.168.1.103:7077"
+KAFKA_BOOTSTRAP_SERVERS = 
+HDFS_NAMENODE           = 
+SQLSERVER_HOST          = 
+SPARK_MASTER            = 
 ```
 
-## Bước 2 — Cài đặt trên máy ảo Ubuntu
+## Bước 2 — Cài đặt trên máy ảo 
 
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
 
-## Bước 3 — Tạo schema SQL Server (máy Windows)
+## Bước 3 — Tạo schema SQL Server 
 
 ```bash
 sqlcmd -S localhost -U sa -P <password> -i serving/schema.sql
 ```
 
-## Bước 4 — Khởi động services (máy ảo)
+## Bước 4 — Khởi động services 
 
 ```bash
 chmod +x start_services.sh
 ./start_services.sh
 ```
 
-## Bước 5 — Chạy Spark (máy ảo)
+## Bước 5 — Chạy Spark 
 
 ```bash
 python3 processing/spark_aqi.py
 ```
 
-## Bước 6 — Chạy Fetcher (máy Windows)
+## Bước 6 — Chạy Fetcher 
 
 ```bash
 python collect/fetcher.py
