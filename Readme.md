@@ -134,7 +134,7 @@ https://api.openaq.org/v2/measurements?city=Hanoi&parameter=pm25&limit=100
 
 ## 8. Lưu trữ dữ liệu
 
-```python
+```
 
 df.to_csv("data.csv")
 
