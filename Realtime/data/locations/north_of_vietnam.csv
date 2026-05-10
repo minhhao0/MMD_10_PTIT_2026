@@ -1,0 +1,268 @@
+district,city,lat,lon
+Ba Dinh,Ha Noi,21.0379,105.8359
+Hoan Kiem,Ha Noi,21.0285,105.8521
+Dong Da,Ha Noi,21.0125,105.8289
+Cau Giay,Ha Noi,21.0357,105.7944
+Hai Ba Trung,Ha Noi,21.0125,105.8501
+Hoang Mai,Ha Noi,20.9634,105.8451
+Long Bien,Ha Noi,21.0384,105.8972
+Thanh Xuan,Ha Noi,20.9935,105.8118
+Tay Ho,Ha Noi,21.0664,105.8241
+Nam Tu Liem,Ha Noi,21.0142,105.7644
+Bac Tu Liem,Ha Noi,21.0673,105.7641
+Ha Dong,Ha Noi,20.9708,105.7744
+Son Tay,Ha Noi,21.1352,105.5034
+Ba Vi,Ha Noi,21.2065,105.3789
+Phuc Tho,Ha Noi,21.1065,105.5891
+Dan Phuong,Ha Noi,21.1119,105.6725
+Hoai Duc,Ha Noi,21.0253,105.7065
+Quoc Oai,Ha Noi,20.9897,105.6419
+Thach That,Ha Noi,21.0234,105.5658
+Chuong My,Ha Noi,20.8936,105.6264
+Thanh Oai,Ha Noi,20.8714,105.7828
+Thuong Tin,Ha Noi,20.8353,105.8544
+Phu Xuyen,Ha Noi,20.7297,105.9083
+Me Linh,Ha Noi,21.1736,105.7208
+Dong Anh,Ha Noi,21.1353,105.8406
+Gia Lam,Ha Noi,21.0189,105.9422
+Soc Son,Ha Noi,21.2619,105.8261
+Thanh Tri,Ha Noi,20.9422,105.8347
+My Duc,Ha Noi,20.6975,105.7531
+Ung Hoa,Ha Noi,20.7331,105.8089
+Hong Bang,Hai Phong,20.8654,106.6744
+Le Chan,Hai Phong,20.8490,106.6791
+Ngo Quyen,Hai Phong,20.8546,106.6972
+Kien An,Hai Phong,20.8033,106.6347
+Hai An,Hai Phong,20.8319,106.7328
+Do Son,Hai Phong,20.7072,106.7844
+Duong Kinh,Hai Phong,20.7891,106.7119
+Thuy Nguyen,Hai Phong,20.9328,106.6744
+An Duong,Hai Phong,20.8756,106.6019
+An Lao,Hai Phong,20.8222,106.5369
+Kien Thuy,Hai Phong,20.7583,106.6708
+Tien Lang,Hai Phong,20.7231,106.5614
+Vinh Bao,Hai Phong,20.6842,106.4831
+Cat Hai,Hai Phong,20.7994,106.9839
+Bach Long Vi,Hai Phong,20.1333,107.7333
+Bac Ninh City,Bac Ninh,21.1861,106.0763
+Tu Son,Bac Ninh,21.1122,105.9521
+Que Vo,Bac Ninh,21.1444,106.1833
+Yen Phong,Bac Ninh,21.2069,105.9751
+Tien Du,Bac Ninh,21.1278,106.0333
+Thuan Thanh,Bac Ninh,21.0500,106.0667
+Gia Binh,Bac Ninh,21.0556,106.1833
+Luong Tai,Bac Ninh,21.0167,106.2167
+Bac Giang City,Bac Giang,21.2731,106.1946
+Viet Yen,Bac Giang,21.2500,106.0833
+Hiep Hoa,Bac Giang,21.3500,105.9667
+Tan Yen,Bac Giang,21.3667,106.1167
+Lang Giang,Bac Giang,21.3667,106.2667
+Luc Nam,Bac Giang,21.2833,106.4667
+Luc Ngan,Bac Giang,21.3833,106.5833
+Son Dong,Bac Giang,21.3000,106.8333
+Yen Dung,Bac Giang,21.2167,106.2333
+Yen Thế,Bac Giang,21.4667,106.1500
+Lang Son City,Lang Son,21.8519,106.7589
+Cao Loc,Lang Son,21.8667,106.8167
+Loc Binh,Lang Son,21.6500,106.9500
+Dinh Lap,Lang Son,21.5333,107.1000
+Chi Lang,Lang Son,21.6167,106.6667
+Huu Lung,Lang Son,21.5167,106.3333
+Bac Son,Lang Son,21.9000,106.3167
+Binh Gia,Lang Son,22.0167,106.3833
+Van Quan,Lang Son,21.8333,106.5833
+Van Lang,Lang Son,21.9667,106.6833
+Trang Dinh,Lang Son,22.2500,106.5000
+Thai Nguyen City,Thai Nguyen,21.5939,105.8442
+Song Cong,Thai Nguyen,21.5039,105.8189
+Pho Yen,Thai Nguyen,21.4239,105.8541
+Phu Binh,Thai Nguyen,21.4667,105.9500
+Dong Hy,Thai Nguyen,21.6167,105.8833
+Vo Nhai,Thai Nguyen,21.8000,106.0000
+Dinh Hoa,Thai Nguyen,21.9000,105.6500
+Dai Tu,Thai Nguyen,21.6333,105.6167
+Phu Luong,Thai Nguyen,21.7500,105.7500
+Viet Tri,Phu Tho,21.3014,105.4022
+Phu Tho Town,Phu Tho,21.3931,105.2869
+Doan Hung,Phu Tho,21.6167,105.1833
+Ha Hoa,Phu Tho,21.5167,105.0833
+Thanh Ba,Phu Tho,21.4167,105.1833
+Phu Ninh,Phu Tho,21.3833,105.3500
+Lam Thao,Phu Tho,21.3167,105.2833
+Tam Nong,Phu Tho,21.2833,105.1833
+Thanh Thuy,Phu Tho,21.1500,105.3000
+Cam Khe,Phu Tho,21.3500,105.1000
+Yen Lap,Phu Tho,21.3000,104.9333
+Thanh Son,Phu Tho,21.0833,105.1333
+Tan Son,Phu Tho,21.1167,104.9333
+Vinh Yen,Vinh Phuc,21.3089,105.5967
+Phuc Yen,Vinh Phuc,21.2333,105.7167
+Lap Thach,Vinh Phuc,21.4167,105.4500
+Song Lo,Vinh Phuc,21.4333,105.3500
+Tam Duong,Vinh Phuc,21.3833,105.5833
+Tam Dao,Vinh Phuc,21.4500,105.6333
+Binh Xuyen,Vinh Phuc,21.2833,105.6667
+Yen Lac,Vinh Phuc,21.2167,105.5667
+Vinh Tuong,Vinh Phuc,21.2333,105.4833
+Hung Yen City,Hung Yen,20.6500,106.0500
+Van Lam,Hung Yen,20.9833,106.0500
+Van Giang,Hung Yen,20.9333,105.9500
+Yen My,Hung Yen,20.9167,106.0333
+My Hao,Hung Yen,20.9333,106.1000
+An Thi,Hung Yen,20.8333,106.1167
+Khoai Chau,Hung Yen,20.8333,105.9667
+Kim Dong,Hung Yen,20.7333,106.0167
+Tien Lu,Hung Yen,20.7000,106.1333
+Phu Cu,Hung Yen,20.7333,106.1833
+Thai Binh City,Thai Binh,20.4500,106.3333
+Quynh Phu,Thai Binh,20.6667,106.3500
+Hung Ha,Thai Binh,20.5833,106.2167
+Dong Hung,Thai Binh,20.5500,106.3500
+Thai Thuy,Thai Binh,20.5333,106.5500
+Tien Hai,Thai Binh,20.3833,106.5833
+Kien Xuong,Thai Binh,20.3833,106.4333
+Vu Thu,Thai Binh,20.4167,106.2500
+Nam Dinh City,Nam Dinh,20.4167,106.1667
+My Loc,Nam Dinh,20.4667,106.1333
+Vu Ban,Nam Dinh,20.3833,106.1000
+Y Yen,Nam Dinh,20.3667,105.9833
+Nghia Hung,Nam Dinh,20.1500,106.1000
+Nam Truc,Nam Dinh,20.3167,106.2000
+Truc Ninh,Nam Dinh,20.2833,106.2500
+Xuan Truong,Nam Dinh,20.3000,106.3500
+Giao Thuy,Nam Dinh,20.2500,106.4667
+Hai Hau,Nam Dinh,20.1000,106.2500
+Ninh Binh City,Ninh Binh,20.2500,105.9667
+Tam Diep,Ninh Binh,20.1500,105.9000
+Nho Quan,Ninh Binh,20.3167,105.7500
+Gia Vien,Ninh Binh,20.3500,105.8833
+Hoa Lu,Ninh Binh,20.2500,105.9167
+Yen Khanh,Ninh Binh,20.2000,106.0667
+Kim Son,Ninh Binh,20.0167,106.1000
+Yen Mo,Ninh Binh,20.1167,105.9500
+Phu Ly,Ha Nam,20.5421,105.9127
+Duy Tien,Ha Nam,20.6333,105.9500
+Kim Bang,Ha Nam,20.5833,105.8167
+Thanh Liem,Ha Nam,20.4833,105.9167
+Binh Luc,Ha Nam,20.5167,106.0167
+Ly Nhan,Ha Nam,20.5667,106.0667
+Hoa Binh City,Hoa Binh,20.8172,105.3375
+Da Bac,Hoa Binh,20.9333,105.1167
+Luong Son,Hoa Binh,20.8833,105.5167
+Kim Boi,Hoa Binh,20.6833,105.4500
+Cao Phong,Hoa Binh,20.7167,105.3167
+Ky Son,Hoa Binh,20.9167,105.3500
+Lac Thuy,Hoa Binh,20.4667,105.7333
+Yen Thuy,Hoa Binh,20.3833,105.5833
+Lac Son,Hoa Binh,20.4833,105.4500
+Tan Lac,Hoa Binh,20.6167,105.2833
+Mai Chau,Hoa Binh,20.6667,105.0833
+Son La City,Son La,21.3283,103.9161
+Quynh Nhai,Son La,21.8333,103.6667
+Thuan Chau,Son La,21.4333,103.7000
+Muong La,Son La,21.4883,104.0483
+Bac Yen,Son La,21.2500,104.4333
+Phu Yen,Son La,21.2167,104.6500
+Moc Chau,Son La,20.8491,104.6464
+Van Ho,Son La,20.7667,104.7333
+Yen Chau,Son La,21.0500,104.3000
+Mai Son,Son La,21.1833,104.0167
+Song Ma,Son La,21.0667,103.7333
+Sop Cop,Son La,20.9333,103.6000
+Dien Bien Phu,Dien Bien,21.3833,103.0167
+Muong Lay,Dien Bien,22.0500,103.1500
+Muong Nhe,Dien Bien,22.1833,102.4500
+Muong Cha,Dien Bien,21.7833,103.0833
+Tua Chua,Dien Bien,21.9667,103.3500
+Tuan Giao,Dien Bien,21.5833,103.4167
+Muong Ang,Dien Bien,21.5167,103.2333
+Dien Bien District,Dien Bien,21.3000,103.0000
+Dien Bien Dong,Dien Bien,21.2333,103.2500
+Nam Po,Dien Bien,21.8167,102.7333
+Lai Chau City,Lai Chau,22.3933,103.4589
+Tam Duong,Lai Chau,22.3500,103.5833
+Muong Te,Lai Chau,22.4167,102.7333
+Sin Ho,Lai Chau,22.3500,103.2167
+Phong Tho,Lai Chau,22.6167,103.3333
+Than Uyen,Lai Chau,21.8667,103.9167
+Tan Uyen,Lai Chau,22.1167,103.7833
+Nam Nhun,Lai Chau,22.1667,103.0500
+Ha Giang City,Ha Giang,22.8233,104.9836
+Dong Van,Ha Giang,23.2500,105.2500
+Meo Vac,Ha Giang,23.1667,105.4167
+Yen Minh,Ha Giang,23.1167,105.1500
+Quan Ba,Ha Giang,23.0667,104.9833
+Bac Quang,Ha Giang,22.4167,104.8500
+Quang Binh,Ha Giang,22.3833,104.7000
+Hoang Su Phi,Ha Giang,22.7500,104.6667
+Xin Man,Ha Giang,22.7000,104.4500
+Vi Xuyen,Ha Giang,22.7833,104.9167
+Bac Me,Ha Giang,22.8500,105.2833
+Cao Bang City,Cao Bang,22.6667,106.2500
+Bao Lac,Cao Bang,22.9500,105.6833
+Bao Lam,Cao Bang,22.7500,105.5167
+Ha Lang,Cao Bang,22.7000,106.7000
+Ha Quang,Cao Bang,22.9167,106.1000
+Hoa An,Cao Bang,22.7167,106.2167
+Nguyen Binh,Cao Bang,22.6500,105.9167
+Quang Hoa,Cao Bang,22.6500,106.5000
+Thach An,Cao Bang,22.4500,106.4500
+Trung Khanh,Cao Bang,22.8500,106.5167
+Tuyen Quang City,Tuyen Quang,21.8167,105.2167
+Chiem Hoa,Tuyen Quang,22.1500,105.2667
+Ham Yen,Tuyen Quang,22.0667,105.0167
+Lam Binh,Tuyen Quang,22.5167,105.1167
+Na Hang,Tuyen Quang,22.4167,105.4167
+Son Duong,Tuyen Quang,21.7167,105.4167
+Yen Son,Tuyen Quang,21.8333,105.2167
+Yen Bai City,Yen Bai,21.7000,104.8667
+Nghia Lo,Yen Bai,21.5833,104.5000
+Luc Yen,Yen Bai,22.1167,104.7333
+Mu Cang Chai,Yen Bai,21.8500,104.1333
+Tram Tau,Yen Bai,21.5167,104.5167
+Tran Yen,Yen Bai,21.7500,104.8333
+Van Chan,Yen Bai,21.5667,104.5667
+Van Yen,Yen Bai,21.9833,104.6833
+Yen Binh,Yen Bai,21.8500,105.0167
+Lao Cai City,Lao Cai,22.4851,103.9707
+Sa Pa,Lao Cai,22.3356,103.8427
+Bac Ha,Lao Cai,22.5350,104.2862
+Bao Thang,Lao Cai,22.3780,104.1485
+Bao Yen,Lao Cai,22.2500,104.4833
+Bat Xat,Lao Cai,22.6167,103.8333
+Muong Khuong,Lao Cai,22.7500,104.1333
+Si Ma Cai,Lao Cai,22.7000,104.2833
+Van Ban,Lao Cai,22.0667,104.0833
+Ha Long,Quang Ninh,20.9501,107.0733
+Cam Pha,Quang Ninh,21.0210,107.2405
+Uong Bi,Quang Ninh,21.0315,106.7725
+Mong Cai,Quang Ninh,21.5367,107.9658
+Dong Trieu,Quang Ninh,21.0567,106.5564
+Quang Yen,Quang Ninh,20.9333,106.8167
+Van Don,Quang Ninh,21.0425,107.4589
+Tien Yen,Quang Ninh,21.3167,107.4167
+Hai Ha,Quang Ninh,21.4333,107.7667
+Dam Ha,Quang Ninh,21.3667,107.5833
+Binh Lieu,Quang Ninh,21.5167,107.5167
+Ba Che,Quang Ninh,21.1833,107.3000
+Co To,Quang Ninh,20.9833,107.7500
+Hai Duong City,Hai Duong,20.9400,106.3330
+Chi Linh,Hai Duong,21.1333,106.3833
+Kinh Mon,Hai Duong,21.0167,106.5333
+Binh Giang,Hai Duong,20.9000,106.1667
+Cam Giang,Hai Duong,20.9333,106.2167
+Gia Loc,Hai Duong,20.8833,106.3000
+Kim Thanh,Hai Duong,20.9167,106.4667
+Nam Sach,Hai Duong,21.0000,106.3333
+Ninh Giang,Hai Duong,20.7333,106.4000
+Thanh Ha,Hai Duong,20.8833,106.4167
+Thanh Mien,Hai Duong,20.7833,106.2333
+Tu Ky,Hai Duong,20.8167,106.3667
+Bac Kan City,Bac Kan,22.1469,105.8333
+Ba Be,Bac Kan,22.4167,105.7333
+Bach Thong,Bac Kan,22.2500,105.8667
+Cho Don,Bac Kan,22.1667,105.6167
+Cho Moi,Bac Kan,21.9167,105.8833
+Na Ri,Bac Kan,22.2167,106.1333
+Ngan Son,Bac Kan,22.4500,105.9833
+Pac Nam,Bac Kan,22.5667,105.6167

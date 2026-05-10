@@ -1,0 +1,18 @@
+bin\windows\kafka-storage.bat random-uuid
+format:
+bin\windows\kafka-storage.bat format -t p8RJHIC4TPmuK5qqGtVCpQ -c config\controller.properties --standalone
+bin\windows\kafka-storage.bat format -t p8RJHIC4TPmuK5qqGtVCpQ -c config\broker.properties
+controller:
+bin\windows\kafka-server-start.bat config\controller.properties
+broker:
+bin\windows\kafka-server-start.bat config\broker.properties
+kiểm tra topic:
+bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+tạo topic
+bin\windows\kafka-topics.bat --create --topic aqi-data --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+producer (gửi dữ liệu)
+bin\windows\kafka-console-producer.bat --topic aqi-data --bootstrap-server localhost:9092
+consumer (nhận dữ liệu)
+bin\windows\kafka-console-consumer.bat --topic aqi-data --from-beginning --bootstrap-server localhost:9092
+chạy docker:
+docker-compose up -d
