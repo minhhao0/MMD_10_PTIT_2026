@@ -49,7 +49,7 @@ aqi-vietnam/
 
 Mở `config/config.py`, điền đúng IP:
 
-```python
+```
 KAFKA_BOOTSTRAP_SERVERS = 
 HDFS_NAMENODE           = 
 SQLSERVER_HOST          = 
