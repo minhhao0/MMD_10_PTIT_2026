@@ -30,8 +30,16 @@ Open-Meteo API  →  fetcher/scheduler  →  Kafka (aqi-raw)
 ```powershell
 cd Realtime
 copy .env.example .env
-# Chỉnh .env nếu đổi port/password
 ```
+
+Điền **đầy đủ** các biến trong `.env`. Giá trị Postgres / Kafka / HDFS phải **khớp** với `docker-compose.yml` (và ngược lại nếu bạn đổi mật khẩu).
+
+| Nhóm biến | Ghi chú |
+|-----------|---------|
+| `POSTGRES_*` | User, password, DB — dùng cho Python, `psql`, Superset |
+| `KAFKA_*` | Bootstrap cho producer / Spark |
+| `HDFS_*` | Namenode cho Spark (`hdfs://host:port`) |
+| `TIMEZONE` | Khuyến nghị `Asia/Ho_Chi_Minh` |
 
 ```powershell
 python -m venv .venv
@@ -40,7 +48,7 @@ pip install -r requirements.txt
 pip install tzdata
 ```
 
-> Trên Windows cần `tzdata` để dùng múi giờ `Asia/Ho_Chi_Minh`.
+> Trên Windows cần `tzdata` cho múi giờ `Asia/Ho_Chi_Minh`.
 
 ### 2. Chỉnh đường dẫn Spark/Java (bắt buộc sau khi clone)
 
@@ -49,13 +57,7 @@ Mở `processing/spark_aqi.py`, sửa cho khớp máy bạn:
 - `JAVA_HOME`
 - `HADOOP_HOME` / `hadoop.home.dir`
 - `SPARK_HOME`
-- `CHECKPOINT_DIR` → nên trỏ tới `.../Realtime/data/checkpoints/streaming`
-
-Ví dụ checkpoint:
-
-```python
-CHECKPOINT_DIR = "file:///D:/projects/Realtime/data/checkpoints/streaming"
-```
+- `CHECKPOINT_DIR` → trỏ tới `.../Realtime/data/checkpoints/streaming`
 
 ### 3. Khởi động Docker
 
@@ -65,26 +67,22 @@ docker compose up -d
 
 Đợi Kafka, HDFS (namenode/datanode), Postgres, Redis, Superset sẵn sàng.
 
-**Tạo schema PostgreSQL (lần đầu):**
+**Tạo schema PostgreSQL (lần đầu)** — thay `<user>` và `<db>` bằng `POSTGRES_USER` / `POSTGRES_DB` trong `.env`:
 
 ```powershell
-Get-Content serving\schema.sql | docker exec -i postgres psql -U aqi_user -d aqi_db
+Get-Content serving\schema.sql | docker exec -i postgres psql -U <user> -d <db>
 ```
 
-**Superset:** http://localhost:8088 — `admin` / `admin`
+**Superset:** http://localhost:8088  
 
-Kết nối database trong Superset:
-
-- Host: `postgres` (trong Docker network) hoặc `host.docker.internal` / IP máy nếu cấu hình khác
-- Database: `aqi_db`
-- User: `aqi_user` / `aqi_pass`
-
-Dataset chính: bảng `aqi_readings`, cột thời gian `event_time`.
+- Tài khoản admin: do bước `superset-init` trong `docker-compose.yml` (hoặc `scripts/start_superset.ps1`) — **không ghi trong repo**.
+- Kết nối dataset AQI: host `postgres` (trong Docker network), database / user / password lấy từ `.env` (`POSTGRES_*`).
+- Bảng dashboard: `aqi_readings`, cột thời gian `event_time`.
 
 ### 4. Kiểm tra HDFS
 
 - NameNode UI: http://localhost:9870  
-- Spark đọc/ghi: `hdfs://localhost:9000/aqi/raw`
+- Đường dữ liệu thô: `hdfs://<HDFS_HOST>:<HDFS_PORT>/aqi/raw` (theo `.env`)
 
 Nếu Spark không ghi được HDFS, xem `hadoop.env` (hostname datanode).
 
@@ -92,18 +90,18 @@ Nếu Spark không ghi được HDFS, xem `hadoop.env` (hostname datanode).
 
 ## Chạy pipeline
 
-Mở **3 terminal** (thư mục `Realtime`), thứ tự:
+Mở **2 terminal** (thư mục `Realtime`), thứ tự:
 
 | # | Lệnh | Vai trò |
 |---|------|---------|
 | 1 | `python processing/spark_aqi.py` | Spark Streaming — **chạy trước**, luôn bật |
 | 2 | `python collect/scheduler.py` | Fetch Open-Meteo mỗi đầu giờ → Kafka |
-| 3 | *(tùy chọn)* `python collect/fetcher.py` | Fetch một lần (test) |
+| *(tùy chọn)* | `python collect/fetcher.py` | Fetch một lần (test) |
 
-Sau vài phút, kiểm tra dữ liệu:
+Kiểm tra dữ liệu (dùng user/db từ `.env`):
 
 ```powershell
-docker exec postgres psql -U aqi_user -d aqi_db -c "SELECT COUNT(*), MAX(event_time) FROM aqi_readings;"
+docker exec -i postgres psql -U <user> -d <db> -c "SELECT COUNT(*), MAX(event_time) FROM aqi_readings;"
 ```
 
 ---
@@ -111,8 +109,8 @@ docker exec postgres psql -U aqi_user -d aqi_db -c "SELECT COUNT(*), MAX(event_t
 ## Dừng hệ thống
 
 - `Ctrl+C` trên `spark_aqi.py` và `scheduler.py`
-- `docker compose down` (giữ dữ liệu volume)
-- `docker compose down -v` — **xóa toàn bộ** dữ liệu Postgres/HDFS trong Docker
+- `docker compose down` (giữ volume)
+- `docker compose down -v` — **xóa** dữ liệu Postgres/HDFS trong Docker
 
 ---
 
@@ -121,9 +119,9 @@ docker exec postgres psql -U aqi_user -d aqi_db -c "SELECT COUNT(*), MAX(event_t
 | Script | Khi nào dùng |
 |--------|----------------|
 | `reset_checkpoints.ps1` | Spark lỗi offset / đổi topic Kafka |
-| `reset_kafka_topic.ps1` | Topic `aqi-raw` mất hoặc sai số partition |
-| `start_superset.ps1` | Khởi tạo `superset_meta` + chạy Superset |
-| `migrate_timezone.sql` | DB cũ dùng `TIMESTAMPTZ` (chạy một lần) |
+| `reset_kafka_topic.ps1` | Topic `aqi-raw` mất hoặc sai partition |
+| `start_superset.ps1` | Khởi tạo metadata DB + Superset |
+| `migrate_timezone.sql` | DB cũ dùng `TIMESTAMPTZ` (một lần) |
 
 ---
 
@@ -131,36 +129,31 @@ docker exec postgres psql -U aqi_user -d aqi_db -c "SELECT COUNT(*), MAX(event_t
 
 ```
 Realtime/
-├── collect/           # fetcher, scheduler, producer Kafka
-├── processing/        # spark_aqi.py (streaming), spark_batch.py (tùy chọn)
-├── serving/           # schema.sql, superset_config.py
+├── collect/
+├── processing/
+├── serving/
 ├── data/
-│   ├── locations/     # CSV tỉnh/huyện (commit được)
-│   ├── checkpoints/ # Spark — KHÔNG commit
-│   └── snapshots/     # JSON backup — KHÔNG commit
+│   ├── locations/      # CSV — commit được
+│   ├── checkpoints/    # KHÔNG commit
+│   └── snapshots/      # KHÔNG commit
 ├── scripts/
 ├── docker-compose.yml
 ├── config.py
-├── requirements.txt
-└── .env.example
+├── .env.example        # Chỉ tên biến
+├── .env                # Giá trị thật — KHÔNG commit
+└── requirements.txt
 ```
 
 ---
 
-## File **không** nên push lên GitHub
+## Bảo mật / Git
 
-| Loại | Ví dụ | Lý do |
-|------|--------|--------|
-| Biến môi trường / mật khẩu | `.env` | Password DB, cấu hình riêng máy |
-| Checkpoint Spark | `data/checkpoints/**` | Trạng thái runtime, đường dẫn máy bạn |
-| Snapshot JSON | `data/snapshots/*.json` | File lớn, tạo lại khi fetch |
-| Cache Python | `__pycache__/`, `.venv/` | Tự sinh |
-| Cấu hình IDE | `.vscode/`, `.idea/` | Tuỳ máy từng người |
-| Dữ liệu Docker | Volume `postgres_data`, HDFS… | Nằm trên Docker, không trong repo |
+| Push được | Không push |
+|-----------|------------|
+| Mã nguồn, `docker-compose.yml`, `.env.example` (tên biến) | `.env`, checkpoint, snapshot |
+| `data/locations/*.csv`, `README.md` | Mật khẩu trong chat, screenshot config |
 
-**Nên push:** mã nguồn `.py`, `docker-compose.yml`, `hadoop.env`, `serving/schema.sql`, `data/locations/*.csv`, `requirements.txt`, `.env.example`, `.gitignore`, `README.md`, `scripts/*.ps1`.
-
-**Lưu ý:** `processing/spark_aqi.py` có đường dẫn JDK/Spark **của máy dev** — vẫn push được nhưng người clone phải sửa lại (xem mục Cài đặt §2).
+Đổi mật khẩu mặc định trước khi mở port ra LAN/internet. Không commit `.env`.
 
 ---
 
@@ -168,14 +161,14 @@ Realtime/
 
 | Triệu chứng | Cách xử lý |
 |-------------|------------|
-| Spark không đọc Kafka | Chạy Spark **trước** scheduler; kiểm tra topic `aqi-raw` (3 partitions) |
-| Lỗi offset / checkpoint | `.\scripts\reset_checkpoints.ps1` rồi restart `spark_aqi.py` |
-| `event_time` lệch 7 giờ | Chạy `migrate_timezone.sql` hoặc DB mới từ `schema.sql` |
+| Spark không đọc Kafka | Chạy Spark **trước** scheduler; topic `aqi-raw` (3 partitions) |
+| Lỗi offset / checkpoint | `.\scripts\reset_checkpoints.ps1` → restart `spark_aqi.py` |
+| `event_time` lệch giờ | `migrate_timezone.sql` hoặc DB mới từ `schema.sql` |
 | Fetch lỗi timezone Windows | `pip install tzdata` |
-| Superset không có data | Dataset trỏ `aqi_readings`; Spark + scheduler đang chạy |
+| Superset trống | Dataset `aqi_readings`; Spark + scheduler đang chạy; kiểm tra kết nối DB trong `.env` |
 
 ---
 
 ## Giấy phép dữ liệu
 
-Dữ liệu khí tượng từ [Open-Meteo](https://open-meteo.com/) / CAMS — cần ghi attribution khi trình bày đồ án.
+Dữ liệu từ [Open-Meteo](https://open-meteo.com/) / CAMS — cần attribution khi trình bày đồ án.
