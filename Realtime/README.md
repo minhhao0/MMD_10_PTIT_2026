@@ -123,39 +123,8 @@ docker exec -i postgres psql -U <user> -d <db> -c "SELECT COUNT(*), MAX(event_ti
 | `start_superset.ps1` | Khởi tạo metadata DB + Superset |
 | `migrate_timezone.sql` | DB cũ dùng `TIMESTAMPTZ` (một lần) |
 
----
 
-## Cấu trúc thư mục
 
-```
-Realtime/
-├── collect/
-├── processing/
-├── serving/
-├── data/
-│   ├── locations/      # CSV — commit được
-│   ├── checkpoints/    # KHÔNG commit
-│   └── snapshots/      # KHÔNG commit
-├── scripts/
-├── docker-compose.yml
-├── config.py
-├── .env.example        # Chỉ tên biến
-├── .env                # Giá trị thật — KHÔNG commit
-└── requirements.txt
-```
-
----
-
-## Bảo mật / Git
-
-| Push được | Không push |
-|-----------|------------|
-| Mã nguồn, `docker-compose.yml`, `.env.example` (tên biến) | `.env`, checkpoint, snapshot |
-| `data/locations/*.csv`, `README.md` | Mật khẩu trong chat, screenshot config |
-
-Đổi mật khẩu mặc định trước khi mở port ra LAN/internet. Không commit `.env`.
-
----
 
 ## Xử lý sự cố nhanh
 
@@ -167,8 +136,3 @@ Realtime/
 | Fetch lỗi timezone Windows | `pip install tzdata` |
 | Superset trống | Dataset `aqi_readings`; Spark + scheduler đang chạy; kiểm tra kết nối DB trong `.env` |
 
----
-
-## Giấy phép dữ liệu
-
-Dữ liệu từ [Open-Meteo](https://open-meteo.com/) / CAMS — cần attribution khi trình bày đồ án.
