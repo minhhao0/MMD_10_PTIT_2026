@@ -13,12 +13,13 @@ from config import (
     TIMEZONE,
     MAX_CONCURRENT_REQUESTS,
     SNAPSHOT_DIR,
+    now_local,
 )
 from collect.locations import load_locations
 
 
 def get_current_hour_index(times: list[str]) -> int:
-    now_str = datetime.now().strftime("%Y-%m-%dT%H:00")
+    now_str = now_local().strftime("%Y-%m-%dT%H:00")
     if now_str in times:
         return times.index(now_str)
     return max(0, len(times) // 2)

@@ -1,0 +1,40 @@
+# ── Môi trường & bí mật ────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Dữ liệu sinh ra khi chạy (không commit) ───────────────────
+data/checkpoints/
+data/snapshots/
+*.parquet
+
+# ── Python ─────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ── IDE / OS ───────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ── Log & tạm ──────────────────────────────────────────────────
+*.log
+*.tmp
+
+# ── Spark / Hadoop local (nếu có) ──────────────────────────────
+spark-warehouse/
+metastore_db/
+derby.log
+
+# ── Docker volumes (dữ liệu DB/HDFS trong container) ───────────
+# Không nằm trong repo; chỉ liệt kê để tham khảo

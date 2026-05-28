@@ -4,7 +4,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 import json
 from confluent_kafka import Producer
-from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC
+from config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_TOPIC_RAW
 
 def create_producer() -> Producer:
     return Producer({
@@ -27,7 +27,7 @@ def send_records(records: list[dict], verbose: bool = False):
         key     = f"{record['province']}_{record['district']}".encode()
         value   = json.dumps(record, ensure_ascii=False).encode()
         producer.produce(
-            topic    = KAFKA_TOPIC,
+            topic    = KAFKA_TOPIC_RAW,
             key      = key,
             value    = value,
             callback = delivery_report if verbose else None,
@@ -41,4 +41,4 @@ def send_records(records: list[dict], verbose: bool = False):
 
     # Flush toàn bộ còn lại
     producer.flush()
-    print(f"\nGửi xong {success}/{len(records)} records vào topic '{KAFKA_TOPIC}'")
+    print(f"\nGửi xong {success}/{len(records)} records vào topic '{KAFKA_TOPIC_RAW}'")

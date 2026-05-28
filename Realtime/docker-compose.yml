@@ -18,22 +18,133 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
 
-  mysql:
-    image: mysql:8.0
-    container_name: mysql
-    environment:
-      MYSQL_DATABASE: aqi_db
-      MYSQL_USER: aqi_user
-      MYSQL_PASSWORD: aqi_pass
-      MYSQL_ROOT_PASSWORD: root
+  kafka-init:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: kafka-init
+    depends_on:
+      - kafka
+    restart: "no"
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      echo "Waiting for Kafka..." &&
+      sleep 10 &&
+      kafka-topics --bootstrap-server kafka:9092
+        --create --if-not-exists
+        --topic aqi-raw
+        --partitions 3
+        --replication-factor 1 &&
+      kafka-topics --bootstrap-server kafka:9092 --describe --topic aqi-raw
+
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: namenode
+    hostname: namenode
     ports:
-      - "3307:3306"
+      - "9870:9870"   # Web UI
+      - "9000:9000"   # HDFS RPC — port này để Spark kết nối
     volumes:
-      - mysql_data:/var/lib/mysql
+      - namenode_data:/hadoop/dfs/name
+    environment:
+      - CLUSTER_NAME=aqi-cluster
+      - CORE_CONF_dfs_permissions_enabled=false
+      - HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check=false
+    env_file:
+      - ./hadoop.env
+
+  datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode
+    hostname: datanode
+    depends_on:
+      - namenode
+    ports:
+      - "9864:9864"   # DataNode Web UI
+      - "9866:9866"   # DataNode transfer port — Spark ghi data qua đây
+    volumes:
+      - datanode_data:/hadoop/dfs/data
+    environment:
+      - CORE_CONF_dfs_permissions_enabled=false
+      - HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check=false
+    env_file:
+      - ./hadoop.env
+
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      POSTGRES_DB: aqi_db
+      POSTGRES_USER: aqi_user
+      POSTGRES_PASSWORD: aqi_pass
+      TZ: Asia/Ho_Chi_Minh
+      PGTZ: Asia/Ho_Chi_Minh
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: unless-stopped
+
+  superset-init:
+    image: apache/superset:4.1.2
+    container_name: superset-init
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      SUPERSET_SECRET_KEY: aqi-superset-dev-secret-change-me
+      DATABASE_URL: postgresql+psycopg2://aqi_user:aqi_pass@postgres:5432/superset_meta
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+    volumes:
+      - ./serving/superset_config.py:/app/pythonpath/superset_config.py
+    command: >
+      /bin/bash -c "
+      pip install --no-cache-dir psycopg2-binary &&
+      superset db upgrade &&
+      superset fab create-admin --username admin --password admin --firstname AQI --lastname Admin --email admin@aqi.local || true &&
+      superset init
+      "
+    restart: "no"
+
+  superset:
+    image: apache/superset:4.1.2
+    container_name: superset
+    depends_on:
+      superset-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_started
+      redis:
+        condition: service_started
+    ports:
+      - "8088:8088"
+    environment:
+      SUPERSET_SECRET_KEY: aqi-superset-dev-secret-change-me
+      DATABASE_URL: postgresql+psycopg2://aqi_user:aqi_pass@postgres:5432/superset_meta
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+    volumes:
+      - ./serving/superset_config.py:/app/pythonpath/superset_config.py
+      - superset_home:/app/superset_home
+    command: >
+      /bin/bash -c "
+      pip install --no-cache-dir psycopg2-binary &&
+      /usr/bin/run-server.sh
+      "
+    restart: unless-stopped
 
 volumes:
-  mysql_data:
+  namenode_data:
+  datanode_data:
+  postgres_data:
+  superset_home:
