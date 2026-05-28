@@ -1,0 +1,127 @@
+/* ── Global design tokens ────────────────────────────────────── */
+:root {
+  --bg:      #0f172a;
+  --surface: #1e293b;
+  --surface2:#0f1f35;
+  --border:  #2d3e55;
+  --text:    #e2e8f0;
+  --muted:   #64748b;
+  --muted2:  #94a3b8;
+
+  --good:  #22c55e;
+  --mod:   #eab308;
+  --sens:  #f97316;
+  --bad:   #ef4444;
+  --vbad:  #a855f7;
+
+  --font: 'DM Sans', sans-serif;
+  --mono: 'Space Mono', monospace;
+}
+
+/* ── Home wrapper ────────────────────────────────────────────── */
+.home {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--surface);
+  border-radius: 14px;
+  border: 0.5px solid var(--border);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--good);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 #22c55e44; }
+  50%       { opacity: 0.5; box-shadow: 0 0 0 6px #22c55e00; }
+}
+
+.header h1 {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--muted2);
+  text-transform: uppercase;
+}
+
+.live-time {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── Location selector bar ───────────────────────────────────── */
+.loc-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.loc-btn {
+  font: 500 11px/1 var(--font);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 0.5px solid var(--border);
+  background: transparent;
+  color: var(--muted2);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.loc-btn:hover {
+  background: var(--surface);
+  border-color: var(--muted);
+}
+
+.loc-btn--active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+/* ── Main grid: map + right column ───────────────────────────── */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  align-items: start;
+}
+
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 800px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}

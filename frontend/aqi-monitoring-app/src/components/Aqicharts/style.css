@@ -1,0 +1,69 @@
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.chart-card {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.chart-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.chart-title {
+  font: 600 11px/1 var(--font);
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.chart-sub {
+  font: 400 10px/1 var(--font);
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.chart-badge {
+  font: 500 9px/1 var(--font);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.chart-badge--live {
+  background: #1e3a5f;
+  color: #7dd3fc;
+}
+
+.chart-badge--week {
+  background: #14532d;
+  color: #86efac;
+}
+
+.chart-badge--poll {
+  background: #3b1f00;
+  color: #fcd34d;
+}
+
+.chart-badge--comp {
+  background: #2e1065;
+  color: #c4b5fd;
+}
+
+.canvas-wrap {
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

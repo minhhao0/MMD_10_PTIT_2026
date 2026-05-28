@@ -1,0 +1,51 @@
+.fc-card {
+  flex-shrink: 0;
+  width: 66px;
+  border-radius: 10px;
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border: 0.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.fc-card:hover {
+  transform: translateY(-2px);
+}
+
+.fc-card:focus-visible {
+  box-shadow: 0 0 0 2px #7dd3fc;
+}
+
+.fc-card--active {
+  border-width: 1.5px;
+}
+
+.fc-time {
+  font: 400 9px/1.2 var(--mono);
+  color: var(--muted);
+  text-align: center;
+}
+
+.fc-aqi {
+  font: 700 16px/1 var(--mono);
+  transition: color 0.2s ease;
+}
+
+.fc-bar {
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+
+.fc-label {
+  font: 500 8px/1.2 var(--font);
+  text-align: center;
+  transition: color 0.2s ease;
+}
