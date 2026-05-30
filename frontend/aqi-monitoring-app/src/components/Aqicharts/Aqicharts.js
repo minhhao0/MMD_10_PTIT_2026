@@ -199,9 +199,9 @@ export default function AQICharts({ location, locations }) {
  
     fetchAndRender();
      return () => {
-      if (weekChart.current) {
-        weekChart.current.destroy();
-        weekChart.current = null;
+      if (pollChart.current) {
+        pollChart.current.destroy();
+        pollChart.current = null;
       }}
     
   }, [location]);
