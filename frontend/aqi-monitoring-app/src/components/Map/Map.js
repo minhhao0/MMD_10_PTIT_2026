@@ -21,7 +21,7 @@ export default function Map({ locations, activeIndex, onSelectLocation }) {
   function handleMouseEnter(loc, i) {
     setTooltip({
       visible: true,
-      text: `${loc.name}  ·  AQI ${loc.aqi}  ·  ${aqiCategory(loc.aqi)}`,
+      text: `${loc.district}  ·  AQI ${loc.aqi_final}  ·  ${loc.label}`,
       x: loc.cx + 20,
       y: loc.cy - 14,
     });
@@ -51,29 +51,29 @@ export default function Map({ locations, activeIndex, onSelectLocation }) {
 
         {/* Location dots */}
         {locations.map((loc, i) => {
-          const col = aqiColor(loc.aqi);
+          const col = loc.color;
           const isActive = i === activeIndex;
           return (
             <g
-              key={loc.name}
+              key={loc.district+loc.city}
               className="map-location-group"
               onClick={() => onSelectLocation(i)}
               onMouseEnter={() => handleMouseEnter(loc, i)}
               onMouseLeave={handleMouseLeave}
-              aria-label={`${loc.name}, AQI ${loc.aqi}`}
+              aria-label={`${loc.district}, AQI ${loc.aqi_final}`}
               role="button"
               tabIndex={0}
               onKeyDown={e => e.key === 'Enter' && onSelectLocation(i)}
             >
               {/* Pulse ring */}
               <circle
-                cx={loc.cx} cy={loc.cy} r={26}
+                cx={loc.lat} cy={loc.lon} r={26}
                 fill={col} fillOpacity="0.1"
                 stroke={col} strokeOpacity="0.3" strokeWidth="1"
               />
               {/* Main dot */}
               <circle
-                cx={loc.cx} cy={loc.cy}
+                cx={loc.lat} cy={loc.lon}
                 r={isActive ? 18 : 15}
                 fill={col} fillOpacity="0.85"
                 stroke={isActive ? '#fff' : 'none'}
@@ -82,24 +82,24 @@ export default function Map({ locations, activeIndex, onSelectLocation }) {
               />
               {/* AQI number */}
               <text
-                x={loc.cx} y={loc.cy + 5}
+                x={loc.lat} y={loc.lon + 5}
                 textAnchor="middle"
                 fill="#fff"
                 fontSize="10"
                 fontFamily="Space Mono, monospace"
                 fontWeight="700"
               >
-                {loc.aqi}
+                {loc.aqi_final}
               </text>
               {/* District name label */}
               <text
-                x={loc.cx} y={loc.cy + 32}
+                x={loc.lat} y={loc.lon + 32}
                 textAnchor="middle"
                 fill="#64748b"
                 fontSize="9"
                 fontFamily="DM Sans, sans-serif"
               >
-                {loc.name}
+                {loc.district}
               </text>
             </g>
           );

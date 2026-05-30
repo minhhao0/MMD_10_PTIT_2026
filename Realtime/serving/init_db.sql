@@ -1,0 +1,2 @@
+CREATE DATABASE superset_meta;
+CREATE DATABASE aqi_db;

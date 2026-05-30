@@ -3,13 +3,13 @@ import os
 from pathlib import Path
 
 # Đảm bảo Python có thể import được file config.py ở thư mục cha (nếu cần)
-sys.path.append(str(Path(__file__).parent.parent))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # ── Cấu hình môi trường Windows ────────────────────────────────
-os.environ["JAVA_HOME"]       = r"C:\Users\TGDD\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.19.10-hotspot"
-os.environ["HADOOP_HOME"]     = r"C:\hadoop"
-os.environ["hadoop.home.dir"] = r"C:\hadoop"
-os.environ["SPARK_HOME"]      = r"D:\spark-4.1.1-bin-hadoop3"
+os.environ["JAVA_HOME"]       = r"D:\Java\jdk-22"
+os.environ["HADOOP_HOME"]     = r"D:\hadoop"
+os.environ["hadoop.home.dir"] = r"D:\hadoop"
+os.environ["SPARK_HOME"]      = r"D:\spark"
 os.environ["PATH"]            = (
     os.environ["JAVA_HOME"]   + r"\bin;" +
     os.environ["HADOOP_HOME"] + r"\bin;" +
@@ -35,7 +35,7 @@ from config import (
 EVENT_TIME_FMT = "yyyy-MM-dd'T'HH:mm"
 
 # ── Checkpoint (một stream = một consumer Kafka) ───────────────
-CHECKPOINT_DIR = "file:///C:/Users/TGDD/.vscode/MMD/MMD_10_PTIT_2026/Realtime/data/checkpoints/streaming"
+CHECKPOINT_DIR = "file:///D:\\MMD\\Realtime\\data\\checkpoints\\streaming"
 KAFKA_MAX_OFFSETS_PER_TRIGGER = "500"
 
 # ── Retention SQL: chỉ giữ N ngày gần nhất ─────────────────────

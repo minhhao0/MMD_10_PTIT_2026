@@ -88,11 +88,15 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./serving/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
 
   redis:
     image: redis:7-alpine
     container_name: redis
+    ports:
+      - "6379:6379"
     restart: unless-stopped
+
 
   superset-init:
     image: apache/superset:4.1.2
